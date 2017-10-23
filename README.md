@@ -23,7 +23,7 @@ This module was tested with Avi Vantage version 17.1.9
 * `private_ip` - Private IP address of the Avi Controller
 
 ## Example
-
+```hcl
 module "avicontroller-aws" {
   source                = "github.com/timarenz/tf_aws_avicontroller"
 
@@ -34,6 +34,7 @@ module "avicontroller-aws" {
   environment_name      = "staging"
   owner_name            = "tim"
 }
+```
 
 ## Authors
 Created and maintaned by [Tim Arenz](https://github.com/timarenz)
