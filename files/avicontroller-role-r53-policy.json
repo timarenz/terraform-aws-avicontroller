@@ -1,0 +1,41 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1450415752000",
+      "Effect": "Allow",
+      "Action": [
+        "route53:ChangeResourceRecordSets",
+        "route53:CreateHealthCheck",
+        "route53:DeleteHealthCheck",
+        "route53:GetChange",
+        "route53:GetHealthCheck",
+        "route53:GetHealthCheckCount",
+        "route53:GetHealthCheckLastFailureReason",
+        "route53:GetHealthCheckStatus",
+        "route53:GetHostedZone",
+        "route53:GetHostedZoneCount",
+        "route53:ListHealthChecks",
+        "route53:ListHostedZones",
+        "route53:ListHostedZonesByName",
+        "route53:ListResourceRecordSets",
+        "route53:UpdateHealthCheck"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "Stmt1450416548000",
+      "Effect": "Allow",
+      "Action": [
+        "route53domains:GetDomainDetail",
+        "route53domains:ListDomains",
+        "route53domains:ListTagsForDomain"
+      ],
+      "Resource": [
+        "*"
+      ]
+    }
+  ]
+}
