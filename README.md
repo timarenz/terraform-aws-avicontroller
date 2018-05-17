@@ -1,15 +1,11 @@
 # tf_aws_avicontroller
-A terraform module to deploy a single Avi Controller in AWS.
-
-This module was tested with Avi Vantage version 17.1.9
+A terraform module to deploy a single Avi Controller using the latest version available in AWS.
 
 ## Input variables
 
 ### Required
 * `environment_name` - Used as prefix for all supported object names
-* `owner_name` - Also used as prefix for all supported object names
 * `key_path` - Path to the public key used for SSH access to the Avi Controller.
-* `ami_id` - AMI id of the Avi Controller version you want to deploy. See [AWS Marketplace: Avi Vantage Platform](https://aws.amazon.com/marketplace/pp/B01ICD3R7E)
 * `password` - Password for the Avi Controller admin account.
 * `subnet_id` - Id of the subnet the Avi Controller should be connected to
 
@@ -28,11 +24,9 @@ module "avicontroller-aws" {
   source                = "github.com/timarenz/tf_aws_avicontroller"
 
   key_path              = "/Users/tim/.ssh/avicontroller.key"
-  ami_id                = "ami-20de614f"
   subnet_id             = "subnet-19915954"
   password              = "123456"
-  environment_name      = "staging"
-  owner_name            = "tim"
+  environment_name      = "tim-staging"
 }
 ```
 
