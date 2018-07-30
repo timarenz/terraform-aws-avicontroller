@@ -1,16 +1,16 @@
-# tf_aws_avicontroller
+# tf_aws_perf_server_client
 A terraform module to deploy a single Avi Controller using the latest version available in AWS.
 
 ## Input variables
 
 ### Required
 * `environment_name` - Used as prefix for all supported object names
-* `key_path` - Path to the public key used for SSH access to the Avi Controller.
+* `public_key` - public key used for SSH access to the Avi Controller.
 * `password` - Password for the Avi Controller admin account.
-* `subnet_id` - Id of the subnet the Avi Controller should be connected to
+* `subnet_id` - AWS subnet id of the subnet the Avi Controller should be connected to
 
 ### Optional
-* `instance_type` - AWS instance typ used to deploy the Avi Controller. For more information see [Installing Avi Vantage in Amazon Web Services](https://kb.avinetworks.com/docs/17.2/installing-avi-vantage-in-amazon-web-services/) (default, `m4.xlarge`)
+* `instance_type` - AWS instance typ used to deploy the Avi Controller. For more information see [Installing Avi Vantage in Amazon Web Services](https://kb.avinetworks.com/docs/17.2/installing-avi-vantage-in-amazon-web-services/) (default, `m4.2xlarge`)
 
 ## Output variables
 
