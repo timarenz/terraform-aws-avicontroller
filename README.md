@@ -30,7 +30,7 @@ This module was created and tested with Terraform version 0.11.7.
 ## Example
 ```hcl
 module "avicontroller-aws" {
-  source                = "github.com/timarenz/tf_aws_avicontroller"
+  source                = "github.com/timarenz/terraform-aws-avicontroller"
 
   public_key            = "${file("avicontroller.key.pub")}"
   subnet_id             = "subnet-19915954"
