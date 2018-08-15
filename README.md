@@ -1,4 +1,4 @@
-# tf_aws_perf_server_client
+# tf_aws_avicontroller
 A terraform module to deploy an Avi Controller cluster using the latest version available in AWS.
 
 ## External requirements
