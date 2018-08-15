@@ -23,7 +23,8 @@ data "template_file" "setup" {
 }
 
 resource "aws_instance" "avicontroller" {
-  ami                    = "${data.aws_ami.avicontroller.id}"
+  count = "${var.cluster ? 3 : 1}"
+  ami = "${var.ami_id == "" ? data.aws_ami.avicontroller.id : var.ami_id}"
   instance_type          = "${var.instance_type}"
   iam_instance_profile   = "${aws_iam_instance_profile.avicontroller.name}"
   subnet_id              = "${var.subnet_id}"
@@ -36,7 +37,11 @@ resource "aws_instance" "avicontroller" {
   }
 
   tags {
-    Name    = "${var.environment_name}-avicontroller"
+    Name    = "${var.environment_name}-avicontroller-${count.index + 1}"
     AviRole = "Controller"
+  }
+
+  provisioner "local-exec" {
+    command = "while [[ \"$(curl -s -k https://${self.public_ip}/api/cluster/version | jq --raw-output .detail)\" != \"Authentication credentials were not provided.\" ]]; do sleep 5; done"
   }
 }
