@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Calendar Versioning](https://calver.org/) (YYYY.0M.0D.MICRO).
 
+
+## 26.10.18-1 - 2018-10-26
+### Changed
+- Public IP addresses for the Avi Controller instances will be assigned by default
+
 ## 15.08.18-1 - 2018-08-15
 ### Added
 - Added variable (`cluster`) to allow to create three Avi Controller instaces instead of only single Avi Controller instances

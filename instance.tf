@@ -31,7 +31,7 @@ resource "aws_instance" "avicontroller" {
   vpc_security_group_ids = ["${aws_security_group.avicontroller.id}"]
   key_name               = "${aws_key_pair.avicontroller.key_name}"
   user_data              = "${data.template_file.setup.rendered}"
-
+  associate_public_ip_address = true
   root_block_device {
     volume_type = "gp2"
   }
